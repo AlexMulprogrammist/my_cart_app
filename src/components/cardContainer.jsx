@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import CartItem from "./cartItem";
 
 function CardContainer() {
   const { cart } = useGlobalContext();
@@ -20,7 +21,9 @@ function CardContainer() {
       </header>
       {/* cart */}
       <div>
-          
+          {cart.map((item) => {
+            return <CartItem key={item.id} {...item}/>
+          })}
       </div>
       {/* cart footer */}
       <footer>
