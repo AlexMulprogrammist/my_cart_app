@@ -1,5 +1,6 @@
 import React from "react";
 import bag from "../media/icons/bag.svg";
+
 function Navbar() {
   return (
     <nav>
@@ -8,9 +9,7 @@ function Navbar() {
         <div className="nav-container">
           <img className="nav-bag" src={bag} alt="logo_bag" />
           <div className="amount-container">
-              <p className="total-amount">
-                  5
-              </p>
+            <p className="total-amount">5</p>
           </div>
         </div>
       </div>
