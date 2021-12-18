@@ -2,7 +2,6 @@
 ## ```My Cart Web Application - React.js, React-Hooks, External API CSS```
 
 ># [Deploy Project]() 
-
 >Main Page
 ![main_page_cart](main_cart.png)
 
