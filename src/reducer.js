@@ -17,7 +17,7 @@ const reducer = (state, action) => {
       if (cartItem.id === action.payload) {
         return {
           ...cartItem,
-          amount: cartItem + 1,
+          amount: cartItem.amount + 1,
         }
       }
       return cartItem
@@ -31,12 +31,12 @@ const reducer = (state, action) => {
         if (cartItem.id === action.payload) {
           return {
             ...cartItem,
-            amount: cartItem - 1,
+            amount: cartItem.amount - 1,
           }
         }
         return cartItem
       })
-      .filter((cartItem) => cartItem !== 0)
+      .filter((cartItem) => cartItem.amount !== 0)
     return { ...state, cart: tempCart }
   }
   if (action.type === 'GET_TOTALS') {
@@ -47,6 +47,7 @@ const reducer = (state, action) => {
 
         cartTotal.total += itemTotal
         cartTotal.amount += amount
+        return cartTotal
       },
       {
         total: 0,
@@ -66,7 +67,7 @@ const reducer = (state, action) => {
   if (action.type === 'TOGGLE_AMOUNT') {
     let tempCart = state.cart
       .map((cartItem) => {
-        if (cartItem.id === action.payload) {
+        if (cartItem.id === action.payload.id) {
           if (action.payload.type === 'inc') {
             return { ...cartItem, amount: cartItem.amount + 1 }
           }

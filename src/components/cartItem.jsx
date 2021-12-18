@@ -2,7 +2,7 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 const CartItem = ({ id, title, price, img, amount }) => {
-  const { remove, increase, decrease, toggleAmount } = useGlobalContext();
+  const { remove,toggleAmount } = useGlobalContext();
   return (
     <article className="cart-item">
       <img src={img} alt={title} />
@@ -18,6 +18,7 @@ const CartItem = ({ id, title, price, img, amount }) => {
         <button className="amount-btn" onClick={() => toggleAmount(id, "dec")}>
           <p style={{ fontSize: "20px" }}>-</p>
         </button>
+        <p className="amount">{amount}</p>
         {/* increase amount  */}
         <button className="amount-btn" onClick={() => toggleAmount(id, "inc")}>
           <p style={{ fontSize: "20px" }}>+</p>
