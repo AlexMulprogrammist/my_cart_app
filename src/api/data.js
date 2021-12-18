@@ -2,7 +2,7 @@ import macbook from '../media/product/macbook.png'
 import oneplus from '../media/product/oneplus.png'
 import predator from '../media/product/predator.png'
 
-export default [
+const data = [
   {
     id: 1,
     title: 'MacBook Pro',
@@ -25,3 +25,5 @@ export default [
     amount: 1,
   },
 ]
+
+export default data
